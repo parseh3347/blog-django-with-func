@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Detail
+{% endblock title %}
+
+{% block content %}
+
+<a href="{% url 'delete' context.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update' context.id %}" class="btn btn-info">Update</a>
+<hr>
+<h1>{{ context.title }}</h1>
+<h4>{{ context.body }}</h4>
+<h6>created: {{ context.created }}</h6>
+<h6>update: {{ context.update }}</h6>
+<h6>publish: {{ context.publish }}</h6>
+{% endblock content %}

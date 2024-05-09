@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+    
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+    <div class="card">
+        {% if context %}    
+            {% for c in context %}
+                <a class='card-body' href="{% url 'detail' c.id %}">
+                    <h1>{{ c.title }}</h1>
+                </a>
+            {% endfor %}
+        {% else %}
+                <h1> database is null </h1>
+        {% endif %}
+    </div>
+{% endblock content %}
+
+
+ 
